@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import BackToTop from "@/components/BackToTop";
+import Reveal from "@/components/Reveal";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const CAREER_START_YEAR = 2022;
@@ -279,8 +280,10 @@ export default function Home() {
 
       {/* About */}
       <section id="about" className="max-w-5xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-6">About</h2>
-        <div className={`${cardCls} p-8`}>
+        <Reveal>
+          <h2 className="text-3xl font-bold mb-6">About</h2>
+        </Reveal>
+        <Reveal delay={100} className={`${cardCls} p-8`}>
           <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
             Senior Web Developer with{" "}
             <strong className="text-slate-900 dark:text-white">
@@ -312,15 +315,17 @@ export default function Home() {
               <p className="font-medium">Arabic, English, French</p>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Experience */}
       <section id="experience" className="max-w-5xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-8">Experience</h2>
+        <Reveal>
+          <h2 className="text-3xl font-bold mb-8">Experience</h2>
+        </Reveal>
         <div className="space-y-6">
-          {experience.map((job) => (
-            <div key={job.company} className={`${cardCls} p-6`}>
+          {experience.map((job, i) => (
+            <Reveal key={job.company} delay={i * 120} className={`${cardCls} p-6`}>
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="text-xl font-semibold">
                   {job.role} · <span className={accentText}>{job.company}</span>
@@ -334,17 +339,19 @@ export default function Home() {
                   <li key={b}>{b}</li>
                 ))}
               </ul>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
       {/* Projects */}
       <section id="projects" className="max-w-5xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-8">Projects</h2>
+        <Reveal>
+          <h2 className="text-3xl font-bold mb-8">Projects</h2>
+        </Reveal>
         <div className="grid sm:grid-cols-2 gap-6">
-          {projects.map((p) => (
-            <div key={p.name} className={`${cardCls} p-6 flex flex-col`}>
+          {projects.map((p, i) => (
+            <Reveal key={p.name} delay={i * 80} className={`${cardCls} p-6 flex flex-col`}>
               <h3 className="text-lg font-semibold">{p.name}</h3>
               <p className="mt-2 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                 {p.description}
@@ -371,17 +378,19 @@ export default function Home() {
                   ))}
                 </div>
               )}
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
       {/* Skills */}
       <section id="skills" className="max-w-5xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-8">Skills</h2>
+        <Reveal>
+          <h2 className="text-3xl font-bold mb-8">Skills</h2>
+        </Reveal>
         <div className="grid sm:grid-cols-2 gap-6">
-          {Object.entries(skills).map(([group, items]) => (
-            <div key={group} className={`${cardCls} p-6`}>
+          {Object.entries(skills).map(([group, items], i) => (
+            <Reveal key={group} delay={i * 80} className={`${cardCls} p-6`}>
               <h3
                 className={`text-sm uppercase tracking-widest mb-4 ${accentText}`}
               >
@@ -394,15 +403,17 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
       {/* Contact */}
       <section id="contact" className="max-w-5xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
-        <div className={`${cardCls} p-8`}>
+        <Reveal>
+          <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
+        </Reveal>
+        <Reveal delay={100} className={`${cardCls} p-8`}>
           <p className="text-slate-700 dark:text-slate-300">
             Open to senior frontend and fintech roles. Reach out and let&apos;s
             build something.
@@ -444,7 +455,7 @@ export default function Home() {
               </a>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <footer className="border-t border-slate-200 dark:border-white/5 mt-16">
