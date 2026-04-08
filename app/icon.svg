@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    text { fill: #0f172a; }
+    @media (prefers-color-scheme: dark) {
+      text { fill: #f1f5f9; }
+    }
+  </style>
+  <text x="32" y="32" text-anchor="middle" dy="0.34em"
+        font-family="Inter, system-ui, -apple-system, sans-serif"
+        font-size="44" letter-spacing="0">
+    <tspan font-weight="700">R</tspan><tspan font-weight="300">M</tspan>
+  </text>
+</svg>

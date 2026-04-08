@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 48" fill="none">
+  <text x="0" y="32"
+        font-family="Inter, system-ui, -apple-system, sans-serif"
+        font-size="22" font-weight="600" fill="currentColor" letter-spacing="4">
+    RAMI
+  </text>
+  <line x1="78" y1="14" x2="78" y2="34" stroke="currentColor" stroke-width="1.2" opacity="0.4"/>
+  <text x="90" y="32"
+        font-family="Inter, system-ui, -apple-system, sans-serif"
+        font-size="22" font-weight="300" fill="currentColor" letter-spacing="4">
+    METRY
+  </text>
+</svg>
