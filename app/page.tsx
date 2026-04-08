@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import BackToTop from "@/components/BackToTop";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const CAREER_START_YEAR = 2022;
@@ -447,13 +448,12 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-slate-200 dark:border-white/5 mt-16">
-        <div className="max-w-5xl mx-auto px-6 py-8 text-sm text-slate-500 dark:text-slate-500 flex justify-between">
-          <span>© {new Date().getFullYear()} Rami Metry</span>
-          <a href="#top" className="hover:text-accent transition-colors">
-            Back to top ↑
-          </a>
+        <div className="max-w-5xl mx-auto px-6 py-8 text-sm text-slate-500 dark:text-slate-500">
+          <span>© {new Date().getFullYear()} Rami Metry. All rights reserved.</span>
         </div>
       </footer>
+
+      <BackToTop />
     </main>
   );
 }
