@@ -100,7 +100,6 @@ const projects: Project[] = [
     description:
       "NFT marketplace simplifying digital asset ownership for creators, brands, and artists.",
     tech: ["React.js", "Node.js", "Web3.js", "Ethers.js"],
-    links: [{ label: "Studio ↗", url: "http://oasisx.world/studio" }],
   },
   {
     name: "Foothills",
