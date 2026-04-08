@@ -1,6 +1,8 @@
 # Rami Metry — Portfolio
 
-Personal portfolio built with Next.js 14 (App Router), TypeScript, and Tailwind CSS.
+> Live at **[ramimetry.com](https://ramimetry.com)**
+
+Personal portfolio built with Next.js 14 (App Router), TypeScript, and Tailwind CSS. Auto-deployed to Vercel on every push to `main`.
 
 ## Run locally
 
@@ -24,4 +26,8 @@ All sections live in [app/page.tsx](app/page.tsx) — projects, experience, and 
 
 ## Deploy
 
-Easiest path: push to GitHub and import into [Vercel](https://vercel.com/new).
+Auto-deployed to Vercel on every push to `main`. To deploy manually:
+
+```bash
+vercel --prod
+```
