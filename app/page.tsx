@@ -11,15 +11,7 @@ const CAREER_START_YEAR = 2022;
 const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR;
 
 const skills = {
-  Frontend: [
-    "React.js",
-    "Next.js",
-    "Vite.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "Material UI",
-    "Bootstrap",
-  ],
+  Frontend: ["React.js", "Next.js", "Vite.js", "TypeScript", "Tailwind CSS", "Material UI", "Bootstrap"],
   Backend: ["Node.js", "Express.js", "REST APIs", "PostgreSQL", "Redis"],
   Web3: ["Web3.js", "Ethers.js", "Smart Contracts"],
   Tools: ["Git", "GitHub", "Docker", "Postman", "Swagger", "Orval", "VS Code"],
@@ -255,7 +247,9 @@ export default function Home() {
       {/* About */}
       <section id="about" className="max-w-5xl mx-auto px-6 py-16">
         <Reveal>
-          <h2 className="text-3xl font-bold mb-6">About</h2>
+          <div className="section-divider">
+            <h2 className="text-3xl font-bold">About</h2>
+          </div>
         </Reveal>
         <Reveal delay={100} className={`${cardCls} p-8`}>
           <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -295,7 +289,9 @@ export default function Home() {
       {/* Experience */}
       <section id="experience" className="max-w-5xl mx-auto px-6 py-16">
         <Reveal>
-          <h2 className="text-3xl font-bold mb-8">Experience</h2>
+          <div className="section-divider">
+            <h2 className="text-3xl font-bold">Experience</h2>
+          </div>
         </Reveal>
         <div className="space-y-6">
           {experience.map((job, i) => (
@@ -323,7 +319,9 @@ export default function Home() {
       {/* Projects */}
       <section id="projects" className="max-w-5xl mx-auto px-6 py-16">
         <Reveal>
-          <h2 className="text-3xl font-bold mb-8">Projects</h2>
+          <div className="section-divider">
+            <h2 className="text-3xl font-bold">Projects</h2>
+          </div>
         </Reveal>
         <div className="grid sm:grid-cols-2 gap-6">
           {projects.map((p, i) => (
@@ -364,12 +362,14 @@ export default function Home() {
       {/* Skills */}
       <section id="skills" className="max-w-5xl mx-auto px-6 py-16">
         <Reveal>
-          <h2 className="text-3xl font-bold mb-8">Skills</h2>
+          <div className="section-divider">
+            <h2 className="text-3xl font-bold">Skills</h2>
+          </div>
         </Reveal>
         <div className="grid sm:grid-cols-2 gap-6">
           {Object.entries(skills).map(([group, items], i) => (
-            <Reveal key={group} delay={i * 80}>
-              <GlowCard className={`${cardCls} p-6`}>
+            <Reveal key={group} delay={i * 80} className="flex">
+              <GlowCard className={`${cardCls} p-6 w-full`}>
                 <h3
                   className={`text-sm uppercase tracking-widest mb-4 ${accentText}`}
                 >
@@ -391,7 +391,9 @@ export default function Home() {
       {/* Contact */}
       <section id="contact" className="max-w-5xl mx-auto px-6 py-16">
         <Reveal>
-          <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
+          <div className="section-divider">
+            <h2 className="text-3xl font-bold">Get in Touch</h2>
+          </div>
         </Reveal>
         <Reveal delay={100} className={`${cardCls} p-8`}>
           <p className="text-slate-700 dark:text-slate-300">
