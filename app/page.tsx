@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ActiveNav from "@/components/ActiveNav";
 import BackToTop from "@/components/BackToTop";
+import MobileNav from "@/components/MobileNav";
 import GlowCard from "@/components/GlowCard";
 import Reveal from "@/components/Reveal";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -171,6 +172,7 @@ export default function Home() {
           <div className="flex items-center gap-6">
             <ActiveNav />
             <ThemeToggle />
+            <MobileNav />
           </div>
         </div>
       </nav>
