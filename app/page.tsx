@@ -73,10 +73,7 @@ const projects: Project[] = [
     description:
       "Admin Backoffice & Agent Dashboards for a digital wallet platform with RBAC and real-time transaction management.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
-    links: [
-      { label: "Website ↗", url: "https://mojo.com.lb/" },
-      { label: "Portal ↗", url: "https://portal.mojo.com.lb/" },
-    ],
+    links: [{ label: "Website ↗", url: "https://mojo.com.lb/" }],
   },
   {
     name: "Online Reconciliation Platform",
@@ -108,10 +105,7 @@ const projects: Project[] = [
     description:
       "Web application for a US-based facility management company — managing facilities, maintenance tasks, and partner coordination.",
     tech: ["React.js", "Node.js"],
-    links: [
-      { label: "Website ↗", url: "https://foothillsms.com/" },
-      { label: "App ↗", url: "https://app.foothillsms.com/auth/sign-in" },
-    ],
+    links: [{ label: "Website ↗", url: "https://foothillsms.com/" }],
   },
 ];
 
