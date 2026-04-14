@@ -10,7 +10,7 @@ body {
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Scroll-triggered fade-in */
+/* ── Scroll-triggered fade-in ── */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -22,15 +22,37 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-@media (prefers-reduced-motion: reduce) {
-  .reveal {
+
+/* ── Hero entrance animation ── */
+.hero-entrance {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-entrance-1 { animation-delay: 0ms; }
+.hero-entrance-2 { animation-delay: 150ms; }
+.hero-entrance-3 { animation-delay: 300ms; }
+.hero-entrance-4 { animation-delay: 450ms; }
+.hero-entrance-photo { animation-delay: 200ms; }
+
+@keyframes heroIn {
+  to {
     opacity: 1;
-    transform: none;
-    transition: none;
+    transform: translateY(0);
   }
 }
 
-/* Gradient brand text — works in both modes */
+
+/* ── Typewriter cursor blink ── */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 0.8s step-end infinite;
+}
+
+/* ── Gradient brand text ── */
 .gradient-text {
   background: linear-gradient(90deg, #7c3aed, #0891b2);
   -webkit-background-clip: text;
@@ -42,4 +64,15 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .hero-entrance {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
 }

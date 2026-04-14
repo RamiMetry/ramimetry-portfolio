@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import ActiveNav from "@/components/ActiveNav";
 import BackToTop from "@/components/BackToTop";
 import Reveal from "@/components/Reveal";
 import ThemeToggle from "@/components/ThemeToggle";
+import Typewriter from "@/components/Typewriter";
 
 const CAREER_START_YEAR = 2022;
 const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR;
@@ -174,32 +176,7 @@ export default function Home() {
             </svg>
           </Link>
           <div className="flex items-center gap-6">
-            <div className="hidden sm:flex gap-6 text-sm text-slate-600 dark:text-slate-400">
-              <a href="#about" className="hover:text-accent transition-colors">
-                About
-              </a>
-              <a
-                href="#experience"
-                className="hover:text-accent transition-colors"
-              >
-                Experience
-              </a>
-              <a
-                href="#projects"
-                className="hover:text-accent transition-colors"
-              >
-                Projects
-              </a>
-              <a href="#skills" className="hover:text-accent transition-colors">
-                Skills
-              </a>
-              <a
-                href="#contact"
-                className="hover:text-accent transition-colors"
-              >
-                Contact
-              </a>
-            </div>
+            <ActiveNav />
             <ThemeToggle />
           </div>
         </div>
@@ -210,19 +187,21 @@ export default function Home() {
         id="top"
         className="max-w-5xl mx-auto px-6 pt-24 pb-20 grid md:grid-cols-[1fr_auto] gap-12 items-center"
       >
-        <div>
-          <p className={`text-sm uppercase tracking-widest mb-4 ${accentText}`}>
-            Senior Web Developer · Fintech Specialist
+        <div className="relative z-10">
+          <p
+            className={`hero-entrance hero-entrance-1 text-sm uppercase tracking-widest mb-4 ${accentText}`}
+          >
+            <Typewriter />
           </p>
-          <h1 className="text-5xl sm:text-6xl font-bold leading-tight">
+          <h1 className="hero-entrance hero-entrance-2 text-5xl sm:text-6xl font-bold leading-tight">
             Hi, I&apos;m <span className="gradient-text">Rami Metry</span>
           </h1>
-          <p className="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-2xl">
+          <p className="hero-entrance hero-entrance-3 mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-2xl">
             I build production-grade fintech platforms — digital wallets,
             reconciliation systems, and multi-tenant payment gateways — from
             architecture to deployment.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="hero-entrance hero-entrance-4 mt-8 flex flex-wrap gap-3">
             <a
               href="#projects"
               className="px-5 py-3 rounded-lg bg-accent hover:bg-accent/90 text-white font-medium transition-colors shadow-sm"
@@ -259,7 +238,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="relative justify-self-center md:justify-self-end">
+        <div className="hero-entrance hero-entrance-photo relative z-10 justify-self-center md:justify-self-end">
           <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-accent to-cyan-500 blur-2xl opacity-30" />
           <Image
             src="/profile.jpg"
