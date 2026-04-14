@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ActiveNav from "@/components/ActiveNav";
 import BackToTop from "@/components/BackToTop";
+import GlowCard from "@/components/GlowCard";
 import Reveal from "@/components/Reveal";
 import ThemeToggle from "@/components/ThemeToggle";
 import Typewriter from "@/components/Typewriter";
@@ -298,20 +299,22 @@ export default function Home() {
         </Reveal>
         <div className="space-y-6">
           {experience.map((job, i) => (
-            <Reveal key={job.company} delay={i * 120} className={`${cardCls} p-6`}>
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-xl font-semibold">
-                  {job.role} · <span className={accentText}>{job.company}</span>
-                </h3>
-                <span className="text-sm text-slate-500 dark:text-slate-400">
-                  {job.period}
-                </span>
-              </div>
-              <ul className="mt-4 space-y-2 text-slate-700 dark:text-slate-300 list-disc list-inside marker:text-accent">
-                {job.bullets.map((b) => (
-                  <li key={b}>{b}</li>
-                ))}
-              </ul>
+            <Reveal key={job.company} delay={i * 120}>
+              <GlowCard className={`${cardCls} p-6`}>
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-xl font-semibold">
+                    {job.role} · <span className={accentText}>{job.company}</span>
+                  </h3>
+                  <span className="text-sm text-slate-500 dark:text-slate-400">
+                    {job.period}
+                  </span>
+                </div>
+                <ul className="mt-4 space-y-2 text-slate-700 dark:text-slate-300 list-disc list-inside marker:text-accent">
+                  {job.bullets.map((b) => (
+                    <li key={b}>{b}</li>
+                  ))}
+                </ul>
+              </GlowCard>
             </Reveal>
           ))}
         </div>
@@ -324,33 +327,35 @@ export default function Home() {
         </Reveal>
         <div className="grid sm:grid-cols-2 gap-6">
           {projects.map((p, i) => (
-            <Reveal key={p.name} delay={i * 80} className={`${cardCls} p-6 flex flex-col`}>
-              <h3 className="text-lg font-semibold">{p.name}</h3>
-              <p className="mt-2 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                {p.description}
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {p.tech.map((t) => (
-                  <span key={t} className={chipCls}>
-                    {t}
-                  </span>
-                ))}
-              </div>
-              {p.links && (
-                <div className="mt-4 flex flex-wrap gap-4 pt-4 border-t border-slate-200 dark:border-white/5">
-                  {p.links.map((l) => (
-                    <a
-                      key={l.url}
-                      href={l.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`text-sm font-medium hover:text-accent transition-colors ${accentText}`}
-                    >
-                      {l.label}
-                    </a>
+            <Reveal key={p.name} delay={i * 80} className="flex">
+              <GlowCard className={`${cardCls} p-6 flex flex-col w-full`}>
+                <h3 className="text-lg font-semibold">{p.name}</h3>
+                <p className="mt-2 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                  {p.description}
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {p.tech.map((t) => (
+                    <span key={t} className={chipCls}>
+                      {t}
+                    </span>
                   ))}
                 </div>
-              )}
+                {p.links && (
+                  <div className="mt-4 flex flex-wrap gap-4 pt-4 border-t border-slate-200 dark:border-white/5">
+                    {p.links.map((l) => (
+                      <a
+                        key={l.url}
+                        href={l.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`text-sm font-medium hover:text-accent transition-colors ${accentText}`}
+                      >
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </GlowCard>
             </Reveal>
           ))}
         </div>
@@ -363,19 +368,21 @@ export default function Home() {
         </Reveal>
         <div className="grid sm:grid-cols-2 gap-6">
           {Object.entries(skills).map(([group, items], i) => (
-            <Reveal key={group} delay={i * 80} className={`${cardCls} p-6`}>
-              <h3
-                className={`text-sm uppercase tracking-widest mb-4 ${accentText}`}
-              >
-                {group}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {items.map((s) => (
-                  <span key={s} className={skillChipCls}>
-                    {s}
-                  </span>
-                ))}
-              </div>
+            <Reveal key={group} delay={i * 80}>
+              <GlowCard className={`${cardCls} p-6`}>
+                <h3
+                  className={`text-sm uppercase tracking-widest mb-4 ${accentText}`}
+                >
+                  {group}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {items.map((s) => (
+                    <span key={s} className={skillChipCls}>
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </GlowCard>
             </Reveal>
           ))}
         </div>
