@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ActiveNav from "@/components/ActiveNav";
 import BackToTop from "@/components/BackToTop";
+import CountUp from "@/components/CountUp";
 import MobileNav from "@/components/MobileNav";
 import GlowCard from "@/components/GlowCard";
 import Reveal from "@/components/Reveal";
@@ -183,6 +184,15 @@ export default function Home() {
         className="max-w-5xl mx-auto px-6 pt-24 pb-20 grid md:grid-cols-[1fr_auto] gap-12 items-center"
       >
         <div className="relative z-10">
+          <div className="hero-entrance hero-entrance-1 flex items-center gap-3 mb-4">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              Open to Work
+            </span>
+          </div>
           <p
             className={`hero-entrance hero-entrance-1 text-sm uppercase tracking-widest mb-4 ${accentText}`}
           >
@@ -274,7 +284,7 @@ export default function Home() {
             </div>
             <div>
               <p className="text-slate-500 dark:text-slate-500">Experience</p>
-              <p className="font-medium">{yearsOfExperience}+ years</p>
+              <p className="font-medium"><CountUp end={yearsOfExperience} suffix="+ years" /></p>
             </div>
             <div>
               <p className="text-slate-500 dark:text-slate-500">Education</p>
