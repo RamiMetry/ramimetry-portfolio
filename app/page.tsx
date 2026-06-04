@@ -13,7 +13,15 @@ const CAREER_START_YEAR = 2022;
 const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR;
 
 const skills = {
-  Frontend: ["React.js", "Next.js", "Vite.js", "TypeScript", "Tailwind CSS", "Material UI", "Bootstrap"],
+  Frontend: [
+    "React.js",
+    "Next.js",
+    "Vite.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Material UI",
+    "Bootstrap",
+  ],
   Backend: ["Node.js", "Express.js", "REST APIs", "PostgreSQL", "Redis"],
   Web3: ["Web3.js", "Ethers.js", "Smart Contracts"],
   Tools: ["Git", "GitHub", "Docker", "Postman", "Swagger", "Orval", "VS Code"],
@@ -30,8 +38,8 @@ const skills = {
 const experience = [
   {
     period: "Jan 2025 — Present",
-    company: "Mojo Verse LTD",
-    location: "Lebanon",
+    company: "FinVerseAI",
+    location: "Cyprus",
     role: "Web Developer",
     bullets: [
       "Architect and lead frontend development for Mojo Fintech Wallet (Admin Backoffice & Agent Dashboards).",
@@ -71,6 +79,13 @@ const projects: Project[] = [
       "Admin Backoffice & Agent Dashboards for a digital wallet platform with RBAC and real-time transaction management.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
     links: [{ label: "Website ↗", url: "https://mojo.com.lb/" }],
+  },
+  {
+    name: "Buitanda",
+    description:
+      "Online retail marketplace serving Angola. Led the web development admin dashboard to storefront and product catalog through cart and checkout.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
+    links: [{ label: "Website ↗", url: "https://buitanda.com/" }],
   },
   {
     name: "Online Reconciliation Platform",
@@ -284,7 +299,9 @@ export default function Home() {
             </div>
             <div>
               <p className="text-slate-500 dark:text-slate-500">Experience</p>
-              <p className="font-medium"><CountUp end={yearsOfExperience} suffix="+ years" /></p>
+              <p className="font-medium">
+                <CountUp end={yearsOfExperience} suffix="+ years" />
+              </p>
             </div>
             <div>
               <p className="text-slate-500 dark:text-slate-500">Education</p>
@@ -311,7 +328,8 @@ export default function Home() {
               <GlowCard className={`${cardCls} p-6`}>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h3 className="text-xl font-semibold">
-                    {job.role} · <span className={accentText}>{job.company}</span>
+                    {job.role} ·{" "}
+                    <span className={accentText}>{job.company}</span>
                   </h3>
                   <span className="text-sm text-slate-500 dark:text-slate-400">
                     {job.period}
@@ -454,7 +472,9 @@ export default function Home() {
 
       <footer className="border-t border-slate-200 dark:border-white/5 mt-16">
         <div className="max-w-5xl mx-auto px-6 py-8 text-sm text-slate-500 dark:text-slate-500">
-          <span>© {new Date().getFullYear()} Rami Metry. All rights reserved.</span>
+          <span>
+            © {new Date().getFullYear()} Rami Metry. All rights reserved.
+          </span>
         </div>
       </footer>
 
